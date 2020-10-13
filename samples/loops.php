@@ -112,3 +112,45 @@ foreach ($groups as $key => $value) {
 
 }*/
 
+/////////////Home Work/////////////
+///FOREACH
+
+$info  = [
+
+    'task id' => 3323,
+    'task title' => 'create a project in PHP',
+    'task description' => 'create a project using arrays of loops and functions',
+    'task owner' => 'Homer Simpson',
+    'task deadline' => '18.10.2020, 18:20',
+    'task status' => 'done',
+];
+
+foreach($info as $key => $value) {
+    echo "{$key}: {$value}", PHP_EOL;
+}
+
+//FOR
+
+$info = [
+
+    'task id' => 3323,
+    'task title' => 'create a project in PHP',
+    'task description' => 'create a project using arrays of loops and functions',
+    'task owner' => 'Homer Simpson',
+    'task deadline' => '18.10.2020, 18:20',
+    'task status' => 'done',
+];
+
+
+for($i = 0; $i < 1; $i++) {
+
+    var_dump($info);
+}
+
+
+/*$count = count($info);
+for ($counter = 0; $counter < $count; $counter++) {
+    print 'task id' .$info[$counter]['name']. '3323' .$info[$counter]['id'];
+}*/
+
+
