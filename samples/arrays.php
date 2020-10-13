@@ -98,7 +98,7 @@ $info  = [
     'task status' => 'done',
 ];
 
-//var_dump($info);
+var_dump($info);
 
 $info2 = [
 
