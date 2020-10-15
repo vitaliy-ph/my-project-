@@ -16,6 +16,5 @@ function printName(string $name, string $result = 'PHP')
     echo "{$name} + {$function} = {$result}", PHP_EOL;
 
 }
-printName('betal','PHP');
-printName('homer','lox');
+
 //printName(123);
