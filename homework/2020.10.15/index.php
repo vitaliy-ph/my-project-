@@ -148,7 +148,7 @@ function tree($array, $tab = '', $result = '')
 
 
 
-/////////////////////////////////////////////////////////////////arrayCountRecursive
+//////////////////////////////////////////////////////////////arrayCountRecursive
 
 /*function arrayCountRecursive(array $dataArray, bool $countParent = true): int
 {
