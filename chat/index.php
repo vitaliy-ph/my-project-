@@ -27,7 +27,7 @@ fclose($file);
     <title>Document</title>
 </head>
 <body>
-<form action="/chat/bad words.php" method="post">
+<form action="/chat/send-message.php" method="post">
     <div>
 
         <label for="nickname">Nickname</label>
