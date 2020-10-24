@@ -55,12 +55,12 @@ var_dump('outside >>>' . $global);*/
 //$globalFunction2();
 //var_dump('outside 2 >>>' . $global);
 
-function linkedFunc(&$link)
+/*function linkedFunc(&$link)
 {
     var_dump('inside >>>' . $link);
     $link = mt_rand();
     unset($link);
-}
+}*/
 
 /*linkedFunc($global);
 var_dump('outside >>>' . $global);*/
@@ -107,45 +107,43 @@ var_dump($sum);*/
 /////////home work////////////
 //print r and recursion print r
 
-$Hm = [
-    'country' => 'Ukraine',
+/*$Hm = [
+    'country one' => 'Ukraine',
     'city' => 'Lviv',
     'date' => '19 september',
     'time' => '14:29'
 ];
 
-print_r($Hm);
+print_r($Hm);*/
 
 
 // вариант 1
 
-function showWay($ways = [1]) {
-
-    $Hm = [
-        'country' => 'Ukraine',
-        'city' => 'Lviv',
-        'date' => '19 september',
-        'time' => '14:29'
-    ];
 
 
-$end = end($ways);
-$ways[] = $Hm[$end];
+/*function showWay($ways = [1]) {
 
-return $Hm[$end] === null ? $ways : showWay($ways);
+    $paths = array(
+        1 => 3,
+        2 => 4,
+        3 => 2,
+        4 => 5,
+        5 => null);
+
+    if($paths[end($ways)] === null) return $ways;
+    $ways[] = $paths[end($ways)];
+    return showWay($ways);
 }
 
-print_r($Hm);
-
-//print_r(array_count_values($Hm));
+var_dump(showWay());*/
 
 
 
 //echo count($Hm);
 
-/*/// вариант 2
+/// вариант 2
 
-$Hm = [
+/*$Hm = [
     'country' => 'Ukraine',
     'city' => 'Lviv',
     'date' => '19 september',
@@ -172,9 +170,11 @@ function show_arr($Hm,$i='')
 }
 show_arr($Hm);
 
-//// count*/
+//// count
 
-$Hm = [
+*/
+
+/*$Hm = [
     'Ukraine'=> [
         'city' => 'Lviv',
         'date' => '19 september',
@@ -187,10 +187,13 @@ $Hm = [
 
     ],
 ];
-print_r($Hm);
+print_r($Hm);*/
 
-echo "Count all elements: " . count($Hm,COUNT_RECURSIVE);
+//echo "Counts all elements: " . count($Hm,COUNT_RECURSIVE);
 
+//echo "Counts  elements: " . count($Hm);*/
+
+///////////////////
 
 
 

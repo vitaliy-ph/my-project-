@@ -6,7 +6,7 @@ $a3 = [
     'auto' => 'class',
     'color' => 'red',
     'car' => 'lada',
-    'betal150',
+
 ];
 $groups = [
     [
@@ -98,9 +98,9 @@ $info  = [
     'task status' => 'done',
 ];
 
-var_dump($info);
+//var_dump($info);
 
-$info2 = [
+/*$info2 = [
 
     'task id' => 666,
     'task title' => 'create arrays',
@@ -121,7 +121,32 @@ $group = [
         'task owner' => 'bart Simpson',
         'task status' => 'not executed',
     ]
-];
+];*/
 
+//echo count($group, COUNT_RECURSIVE);
 
 //var_dump($info2, $group);
+
+//list($test1, $test2) = [123, 444];
+/*[$test1, $test2] = [123, 444];
+var_dump($test1, $test2);*/
+
+/////////занятие 19.10
+
+
+$info2 = [
+
+    'task id' => 666,
+    'task title' => 'create arrays',
+    'task description' => 'create an array with groups for the next session',
+    'task owner' => [
+       'name 1' => 'Homer Simpson',
+       'name 2' => 'Bart Simpson',
+    ] ,
+    'task deadline' => '18.10.2020, 18:20',
+    'task status' => [
+        'Homer Simpson' => 'done',
+        'Bart Simpson' => 'in process',
+    ],
+];
+ var_dump($info2);

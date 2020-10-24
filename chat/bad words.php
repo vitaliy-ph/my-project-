@@ -1,7 +1,7 @@
 <?php
 
-
-$bw = [
+return
+  [
         'asshole',
         'fuck',
         'bastard',
@@ -9,7 +9,6 @@ $bw = [
         'гнида',
         'ублюдок',
         'конченый',
-        'сука',
         'тварь',
         'bitch',
         'bullshit',

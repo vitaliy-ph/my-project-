@@ -1,9 +1,15 @@
 <?php
 
+/////////////////////////////////////////
 
 
-////////////////////////////////
+
+$message = $_SESSION['message'] ?? '';
+$messageError = '';
+///
+
 $messages = [];
+
 
 
 $file = fopen(__DIR__ . '/storage', 'rb');
@@ -17,6 +23,7 @@ fclose($file);
 
 ?>
 
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -27,6 +34,7 @@ fclose($file);
     <title>Document</title>
 </head>
 <body>
+
 <form action="/chat/send-message.php" method="post">
     <div>
 
@@ -38,18 +46,19 @@ fclose($file);
         <input type="text" name="surname" id="surname"  required>
 
     </div>
+
+
     <br>
         <br>
         <label for="message">Message</label>
     <br>
-        <textarea name="message" id="message" rows="4" cols="25" required></textarea>
-    </div>
+        <textarea name="message" id="message" rows="4" cols="25" required placeholder="не выражаться!"></textarea>
+
     <br>
     <button type ="submit">Send Message</button>
     <button type ="submit">delete </button>
     <br><br>
 </form>
-
 
 <table width="100%" border="3">
     <tr>
@@ -69,5 +78,11 @@ fclose($file);
     </tr>
     <?php endforeach; ?>
 </table>
+////
+<h4 class="warning">
+    <?php if (isset($_GET['obsceneWordsCriticalError'])): ?>
+        не выражаться!.<br>
+    <?php endif; ?>
+</h4>
 </body>
 </html>

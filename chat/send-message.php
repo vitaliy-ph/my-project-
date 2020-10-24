@@ -6,6 +6,7 @@ $name = $_POST['name'] ?? null;
 $surname = $_POST['surname'] ?? null;
 $message = $_POST['message'] ?? null;
 
+
 if (!$nickname || !$message) {
     exit('Nickname and message are required');
 }
