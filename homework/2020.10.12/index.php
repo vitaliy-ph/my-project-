@@ -39,14 +39,13 @@ $info = [
     'task id' => 666,
     'task title' => 'create arrays',
     'task description' => 'create an array with groups for the next session',
-    'task owner: one' => 'Homer Simpson',
-    'task owner: two' =>    'Bart Simpson',
+    'task owner: number one' => 'Homer Simpson',
+    'task owner: number two' =>' Bart Simpson',
     'task deadline' => '18.10.2020, 18:20',
-    'task status: Homer Simpson ' => 'done',
-    'task status: Bart Simpson' => 'in process',
+    'task status: number one' => ' done  ',
+    'task status: number two' => ' in process ',
 
 ];
-
 
 ?>
 <table class="Task manager" style="width:50%"
@@ -62,17 +61,15 @@ foreach($info as $key => $value) {
 </table>
 
 
-
 <style>
     table, th, td {
         border: 1px solid #000000;
+
         border-collapse: collapse;
     }
     th, td {
         padding: 10px;
     }
 </style>
-
-
 
 
