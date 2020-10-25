@@ -30,20 +30,19 @@ foreach($info as $key => $value) {
 /////////таблица
 
 
-
 if (1 > 0) {
-    echo '<h1>Task manager</h1>';
+echo '<h1>Task manager</h1>';
 }
 $info = [
 
-    'task id' => 666,
-    'task title' => 'create arrays',
-    'task description' => 'create an array with groups for the next session',
-    'task owner: number one' => 'Homer Simpson',
-    'task owner: number two' =>' Bart Simpson',
-    'task deadline' => '18.10.2020, 18:20',
-    'task status: number one' => ' done  ',
-    'task status: number two' => ' in process ',
+'task id' => 2,
+'task title' => 'create arrays',
+'task description' => 'create an array with groups for the next session',
+'task owner: number one' => 'Homer Simpson',
+'task owner: number two' =>' Bart Simpson',
+'task deadline' => '18.10.2020, 18:20',
+'task status: number one' => ' done  ',
+'task status: number two' => ' in process ',
 
 ];
 
@@ -71,5 +70,3 @@ foreach($info as $key => $value) {
         padding: 10px;
     }
 </style>
-
-
