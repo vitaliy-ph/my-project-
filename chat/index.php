@@ -1,16 +1,7 @@
 <?php
 
-/////////////////////////////////////////
-
-
-
-$message = $_SESSION['message'] ?? '';
-$messageError = '';
-///
 
 $messages = [];
-
-
 
 $file = fopen(__DIR__ . '/storage', 'rb');
 while ($line = fgets($file, 1024)) {
@@ -34,10 +25,8 @@ fclose($file);
     <title>Document</title>
 </head>
 <body>
-
 <form action="/chat/send-message.php" method="post">
     <div>
-
         <label for="nickname">Nickname</label>
         <input type="text" name="nickname" id="nickname"  required>
         <label for="name">Name</label>
@@ -56,7 +45,6 @@ fclose($file);
 
     <br>
     <button type ="submit">Send Message</button>
-    <button type ="submit">delete </button>
     <br><br>
 </form>
 
@@ -78,11 +66,6 @@ fclose($file);
     </tr>
     <?php endforeach; ?>
 </table>
-////
-<h4 class="warning">
-    <?php if (isset($_GET['obsceneWordsCriticalError'])): ?>
-        не выражаться!.<br>
-    <?php endif; ?>
-</h4>
 </body>
 </html>
+
