@@ -1,7 +1,5 @@
 <?php
 
-
-
 $info = [
     [
         'task id' => 1,
