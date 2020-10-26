@@ -3,5 +3,5 @@
 
 return [
     'baseDir' => __DIR__ . '/storage',
-    'webRout' => '/files/storage',
+    'webRout' => '/files/storage hm',
 ];
