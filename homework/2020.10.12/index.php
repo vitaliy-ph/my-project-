@@ -1,11 +1,9 @@
 <?php
 
-
 error_reporting(E_ALL);
 
 if (1 > 0) {
     echo '<h1>Task manager</h1>';
-
 
 }
 $info = [
@@ -54,7 +52,9 @@ $info = [
         <th>task status</th>
     </tr>
 <?php
-    foreach ($info as $element) {
+
+/////////////////// FOREACH
+   /* foreach ($info as $element) {
         echo "<tr>
             <td>{$element['task id']}</td>
             <td>{$element['task title']}</td>
@@ -63,25 +63,36 @@ $info = [
             <td>{$element['task deadline']}</td>
             <td>{$element['task status']}</td>
             </tr>";
-    }
+    }*/
+
+
+/////////////////// FOR
+for ($i = 0; $i < 2; $i++) {
+    echo "<tr>
+            <td>{$info[$i]['task id']}</td>
+            <td>{$info[$i]['task title']}</td>
+            <td>{$info[$i]['task owner']}</td>
+            <td>{$info[$i]['task description']}</td>
+            <td>{$info[$i]['task deadline']}</td>
+            <td>{$info[$i]['task status']}</td>
+            </tr>";
+}
 ?>
-</table>
+    <style>
+        table, th, td {
+            margin: 10px;
+            border: 1px solid #000000;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+        }
+    </style>
+
+
 </table>
 </body>
 </html>
-
-
-<style>
-    table, th, td {
-        border: 1px solid #000000;
-
-        border-collapse: collapse;
-    }
-    th, td {
-        padding: 10px;
-    }
-</style>
-
 
 
 
