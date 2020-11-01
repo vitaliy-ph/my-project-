@@ -25,7 +25,7 @@ fclose($file);
     <title>Document</title>
 </head>
 <body>
-<form action="/chat/send-message.php" method="post">
+<form action="/chat homework/send-message.php" method="post">
     <div>
         <label for="nickname">Nickname</label>
         <input type="text" name="nickname" id="nickname"  required>
@@ -38,10 +38,10 @@ fclose($file);
 
 
     <br>
-        <br>
-        <label for="message">Message</label>
     <br>
-        <textarea name="message" id="message" rows="4" cols="25" required placeholder="не выражаться!"></textarea>
+    <label for="message">Message</label>
+    <br>
+    <textarea name="message" id="message" rows="4" cols="25" required placeholder="не выражаться!"></textarea>
 
     <br>
     <button type ="submit">Send Message</button>
@@ -57,15 +57,14 @@ fclose($file);
         <th>Time</th>
     </tr>
     <?php foreach ($messages as $message) : ?>
-    <tr>
-        <td><?= $message['nickname']?></td>
-        <td><?= $message['name']?></td>
-        <td><?= $message['surname']?></td>
-        <td><?= $message['message']?></td>
-        <td><?= $message['time']?></td>
-    </tr>
+        <tr>
+            <td><?= $message['nickname']?></td>
+            <td><?= $message['name']?></td>
+            <td><?= $message['surname']?></td>
+            <td><?= $message['message']?></td>
+            <td><?= $message['time']?></td>
+        </tr>
     <?php endforeach; ?>
 </table>
 </body>
 </html>
-
