@@ -1,42 +1,67 @@
 <?php
 
-$config = require __DIR__. '/config.php';
 
-$path = rtrim($config['baseDir'], '/');
+error_reporting(E_ALL);
 
+
+
+
+$config = require __DIR__ . '/config.php';
+
+$baseDir = rtrim($config['baseDir'], '/');
 $webRout = rtrim($config['webRout'], '/');
 
-$rout = ltrim($_GET['rout'] ?? '','/');
-if($rout) {
-    $path .="/{$rout}";
+$actualRout = $baseDir;
+
+$rout = ltrim($_GET['rout'] ?? '', '/');
+if ($rout) {
+    $actualRout = realpath("{$baseDir}/{$rout}");
 }
 
-$content ='file not selected';
-if(is_file($path)) {
-    $mineType = mime_content_type($path);
-    switch ($mineType) {
-        case 'image/jpeg' :
-        case'image/png' :
-            $content = "<img src='{$webRout}/{$rout}' alt='image' width='100%'>";
+$actualDir = $actualRout;
+$actualInsideRout = ltrim(str_replace($baseDir, '', $actualRout), '/');
+///////////
+
+///
+
+if (mb_strlen($actualDir) < mb_strlen($baseDir)) {
+    exit('Directory is not accessed');
+}
+
+$content = 'File not selected';
+if (is_file($actualRout)) {
+    $mimeType = mime_content_type($actualRout);
+    switch ($mimeType) {
+        case 'image/jpeg':
+        case 'image/png':
+            $content = "<img src='{$webRout}/{$rout}' alt='Image' width='100%'>";
             break;
-        case'text/plan':
-            $content = nl2br(file_get_contents($path));
+        case 'text/plain':
+            $content = nl2br(file_get_contents($actualRout));
             break;
         default:
-            $content = "File {$rout} can not be processed";
+            $content = <<<HTML
+                File {$rout} can not be processed<br>
+                Try to <a href="downloadFile.php?rout={$rout}" target="_blank">download</a>
+            HTML;
     }
 
-    $path = dirname($path);
+    $actualDir = dirname($actualRout);
+    $actualInsideRout = dirname($actualInsideRout);
 }
 
-$dirData = scandir($path);
-if (rtrim($path, '/') === rtrim($config['baseDir'], '/')) {
-   $dirData = array_filter($dirData, static function(string $item) {
+
+$dirData = scandir($actualDir);
+if (rtrim($actualDir, '/') === $baseDir) {
+    $dirData = array_filter($dirData, static function (string $item) {
         return !in_array($item, ['.', '..']);
-   });
+    });
 }
 
+/////////////
 
+
+///
 ?>
 <!doctype html>
 <html lang="en">
@@ -48,24 +73,47 @@ if (rtrim($path, '/') === rtrim($config['baseDir'], '/')) {
     <title>Document</title>
 </head>
 <body>
-    <table widht="100%" border="1" cellpadding="10">
-        <tr>
-            <td width="50%" valign="top">
-                    <form action="createDir.php" method="post">
-                        <input name="baseDir" value="<?= $path ?>" type="hidden">
-                        <input name="name" type="text">
-                        <button type="submit">create Dir</button>
-                    </form>
-                    <ul>
+<table width="100%" border="1" cellpadding="10">
+    <tr>
+        <td colspan="4"> <a href="http://skillup.local:8001/files/index.php?rout=">HOME</a>/<?= $actualInsideRout ?>
+            <a href="signOut.php" style="float: right">Sign Out</a>
+        </td>
+    </tr>
+    <tr>
+        <td width="30%" valign="top">
+            <form action="createDir.php" method="post">
+                <input name="baseDir" value="<?= $actualInsideRout ?>" type="hidden">
+                <input name="name" type="text">
+                <button type="submit">Create Dir</button>
+            </form>
+            <hr>
+            <form action="uploadFiles.php" method="post" enctype="multipart/form-data">
+                <input name="baseDir" value="<?= $actualInsideRout ?>" type="hidden">
+                <input name="attachment[]" type="file" multiple="multiple" max="2">
+                <button type="submit">Upload</button>
+            </form>
+            <hr>
+            <ul>
                 <?php foreach ($dirData as $dirRout) : ?>
-                    <li><a href="?rout=<?= $rout ?>/<?=$dirRout ?>"><?= $dirRout ?></a></li>
+                    <li><a href="?rout=<?= $actualInsideRout ?>/<?= $dirRout ?>"><?= $dirRout ?></a></li>
                 <?php endforeach; ?>
-                </ul>
-            </td>
-            <td valign="top">
-                <?= $content ?>
-            </td>
-        </tr>
-    </table>
+            </ul>
+        </td>
+        <td valign="top">
+            <?= $content ?>
+        </td>
+    </tr>
+    <tr>
+        <th>
+            <button> <a
+                style="
+        text-decoration: none;
+        margin: 0px;
+        padding: 3px" href="http://skillup.local:8001/files/index.php?rout=">HOME
+        </a> </button>
+        </th>
+    </tr>
+</table>
 </body>
 </html>
+
