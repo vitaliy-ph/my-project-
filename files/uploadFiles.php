@@ -17,7 +17,7 @@ $dir = sprintf(
     rtrim($baseInsideDir, '/')
 );
 
-///
+
 foreach ($attachment as $attach) {
 
     $rout = sprintf(

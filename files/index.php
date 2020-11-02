@@ -1,10 +1,8 @@
 <?php
 
-
 error_reporting(E_ALL);
 
-
-
+require_once __DIR__ . '/scribe.php';
 
 $config = require __DIR__ . '/config.php';
 
@@ -75,6 +73,7 @@ if (rtrim($actualDir, '/') === $baseDir) {
 <body>
 <table width="100%" border="1" cellpadding="10">
     <tr>
+
         <td colspan="4"> <a href="http://skillup.local:8001/files/index.php?rout=">HOME</a>/<?= $actualInsideRout ?>
             <a href="signOut.php" style="float: right">Sign Out</a>
         </td>
