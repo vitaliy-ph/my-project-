@@ -79,7 +79,7 @@ if (rtrim($actualDir, '/') === $baseDir) {
             <a href="http://skillup.local:8001/files/index.php?rout=">HOME</a>»
             <a href="http://skillup.local:8001/files/index.php?rout=/123">123</a>»
             <a href="http://skillup.local:8001/files/index.php?rout=123/new%20dir">new dir</a>»
-            <?= $actualInsideRout ?>
+
         </td>
 
 <td>
