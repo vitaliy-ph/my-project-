@@ -35,10 +35,10 @@ if($ar_line[0]!=$uVon && (intval($ar_line[1])+$timeOn)>=time()) {
     }
 }
 
-$nruVon = count($addRow);
+$nruvOn = count($addRow);
 $usrOn = '';
 
-for($i=0; $i < $nruVon; $i++) {
+for($i=0; $i < $nruvOn; $i++) {
     if(preg_match($rgxVst, $addRow[$i])) $nrVst++;
     else {
 
@@ -47,10 +47,9 @@ for($i=0; $i < $nruVon; $i++) {
     }
 }
 
-$nrUsr = $nruVon - $nrVst;
+$nrUsr = $nruvOn - $nrVst;
 
-
-$reOut = '<div id="uVon"><h4>Online: '. $nruVon. '</h4>Visitors: '. $nrVst. '<br/>Users: '. $nrUsr. $usrOn. '</div>';
+$reOut = '<div id="uVon"><h4>Online: '. $nruvOn. '</h4>Visitors: '. $nrVst. '<br/>Users: '. $nrUsr. $usrOn. '</div>';
 
 
 if(!file_put_contents($fileTxt, implode("\n", $addRow))) $reOut = 'Error: Recording file not exists, or is not writable';

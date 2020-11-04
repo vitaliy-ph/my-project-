@@ -1,8 +1,9 @@
 <?php
 
 error_reporting(E_ALL);
-
 require_once __DIR__ . '/visit.php';
+
+
 
 $config = require __DIR__ . '/config.php';
 
@@ -74,7 +75,14 @@ if (rtrim($actualDir, '/') === $baseDir) {
 <table width="100%" border="1" cellpadding="10">
     <tr>
 
-        <td colspan="4"> <a href="http://skillup.local:8001/files/index.php?rout=">HOME</a>/<?= $actualInsideRout ?>
+        <td  class="breadcrumb">
+            <a href="http://skillup.local:8001/files/index.php?rout=">HOME</a>»
+            <a href="http://skillup.local:8001/files/index.php?rout=/123">123</a>»
+            <a href="http://skillup.local:8001/files/index.php?rout=123/new%20dir">new dir</a>»
+            <?= $actualInsideRout ?>
+        </td>
+
+<td>
             <a href="signOut.php" style="float: right">Sign Out</a>
         </td>
     </tr>
