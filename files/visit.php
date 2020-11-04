@@ -49,12 +49,6 @@ for($i=0; $i < $nruVon; $i++) {
 
 $nrUsr = $nruVon - $nrVst;
 
-$file = file("count.txt");
-$count = implode("", $file);
-$count++;
-$myFile = fopen("count.txt","w");
-fputs($myFile,$count);
-fclose($myFile);
 
 $reOut = '<div id="uVon"><h4>Online: '. $nruVon. '</h4>Visitors: '. $nrVst. '<br/>Users: '. $nrUsr. $usrOn. '</div>';
 
@@ -66,12 +60,12 @@ if(isset($_GET['uVon']) && $_GET['uVon']=='showOn') $reOut = "document.write('$r
 
 echo $reOut;
 
-/////////////////
 $file = file("count.txt");
 $count = implode("", $file);
 $count++;
 $myFile = fopen("count.txt","w");
 fputs($myFile,$count);
 fclose($myFile);
-echo 'Views:', $count;
+?>
+<span>Views: <?=$count?></span>
 
