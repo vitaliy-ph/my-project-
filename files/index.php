@@ -2,7 +2,7 @@
 
 error_reporting(E_ALL);
 
-require_once __DIR__ . '/scribe.php';
+require_once __DIR__ . '/visit.php';
 
 $config = require __DIR__ . '/config.php';
 
