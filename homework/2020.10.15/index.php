@@ -20,52 +20,38 @@ var_dump($powRecursive);
 ////////////////////////////analog (recursions)
 echo '<br>';
 
-    $Hm = [
-        1 => [
-            'country' => 'Ukraine',
-            'city' => 'Kiev',
-            'date' => '19 september',
-            'time' => '14:29'
-        ],
-        2 => [
-            'country ' => 'Russia',
-            'city' => 'Moscow',
-            'date' => '4 december',
-            'time' => '17:11'
-        ],
-        3 => [
-            'country ' => 'USA',
-            'city' => 'Washington',
-            'date' => '25 August',
-            'time' => '19:44'
-        ]
-    ];
-
-
-echo tree($Hm);
-function tree($array, $tab = '', $result = '')
+$a = [
+    0 => 1,
+    1 => 3,
+    4 => [
+        0 => 1,
+        1 => 5,
+    ],
+];
+function printArray($a, $key = null, $pad = 3)
 {
-    foreach ($array as $key => $value) {
+    if (empty($key)) {
+        echo str_pad('', $pad - 3, ' ', STR_PAD_LEFT) . "Array", PHP_EOL;
+    } else {
+        echo str_pad('', $pad - 6, ' ', STR_PAD_LEFT) . "[$key] => Array \r\n";
+    }
+    echo str_pad('', $pad - 3, ' ', STR_PAD_LEFT) . "{ \r\n";
+    foreach ($a as $key => $value) {
         if (is_array($value)) {
-            $result .= "{$tab}[$key]<br>";
-            $result .= tree($value, $tab . str_repeat('&nbsp;', 7));
+            printArray($value, $key, $pad + 6);
         } else {
-            $result .= "{$tab}[$key] => $value<br>";
+            echo str_pad('', $pad, ' ', STR_PAD_LEFT) . "[$key] => $value \r\n";
         }
     }
-    return $result;
-
+    echo str_pad('', $pad - 3, ' ', STR_PAD_LEFT) . "} \r\n";
 }
 
-/////////////////////////////////////////////////////ALL ELEMENTS
-/*echo
-    "<br>
-all elements of the array: ". count($Hm,COUNT_RECURSIVE);*/
+printArray($a);
 
-//////////////////////////////////////////////////////////////arrayCountRecursive
+
 echo '<br>';
 
-
+///////////////////////////////////////////////////array count
 function arrayCountRecursive(array $dataArray, bool $countParent = true): int
 {
     $elementsCount = count($dataArray);
@@ -107,37 +93,4 @@ $countWithParents = arrayCountRecursive($Hm, true);
 
 echo "not all elements of the array: {$countWithoutParents}<br>
       all elements of the array: {$countWithParents}";
-
-
-
-
-
-/*function show_arr($Hm,$i='')
-{
-    foreach($Hm as $key => $value)
-    {
-        echo $i . "[". $key ."] => ";
-
-        if (is_array($value))
-        {
-
-            echo  "Array\n";
-            show_arr($value,$i.="\t");
-        }
-        else
-        {echo $value."\n";}
-
-    }
-}
-show_arr($Hm);*/
-
-
-
-
-
-
-
-
-
-
 
