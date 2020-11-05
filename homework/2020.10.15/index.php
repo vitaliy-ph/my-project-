@@ -17,6 +17,9 @@ function powerNum(int $number, int $pow): int
 var_dump($powRecursive);
 
 
+
+
+
 ////////////////////////////analog (recursions)
 echo '<br>';
 
@@ -28,6 +31,27 @@ $a = [
         1 => 5,
     ],
 ];
+echo tree($a);
+function tree($array, $tab = '', $result = '')
+{
+    foreach ($array as $key => $value) {
+        if (is_array($value)) {
+            $result .= "{$tab}[$key]<br>";
+            $result .= tree($value, $tab . str_repeat('&nbsp;', 7));
+        } else {
+            $result .= "{$tab}[$key] => $value<br>";
+        }
+    }
+    return $result;
+
+}
+
+
+
+
+/////////////////////////////////////либо
+echo'<br>';
+
 function printArray($a, $key = null, $pad = 3)
 {
     if (empty($key)) {
@@ -47,9 +71,16 @@ function printArray($a, $key = null, $pad = 3)
 }
 
 printArray($a);
+/////////////////////////////////////////////////////ALL ELEMENTS
+/*echo
+    "<br>
+all elements of the array: ". count($a,COUNT_RECURSIVE);
+echo '<br>';*/
 
 
-echo '<br>';
+
+
+
 
 ///////////////////////////////////////////////////array count
 function arrayCountRecursive(array $dataArray, bool $countParent = true): int
@@ -65,30 +96,18 @@ function arrayCountRecursive(array $dataArray, bool $countParent = true): int
     }
     return $elementsCount;
 }
-
-$Hm = [
-    1 => [
-        'country' => 'Ukraine',
-        'city' => 'Kiev',
-        'date' => '19 september',
-        'time' => '14:29'
+$a = [
+    0 => 1,
+    1 => 3,
+    4 => [
+        0 => 1,
+        1 => 5,
     ],
-    2 => [
-        'country ' => 'Russia',
-        'city' => 'Moscow',
-        'date' => '4 december',
-        'time' => '17:11'
-    ],
-    3 => [
-        'country ' => 'USA',
-        'city' => 'Washington',
-        'date' => '25 August',
-        'time' => '19:44'
-    ]
 ];
 
-$countWithoutParents = arrayCountRecursive($Hm, false);
-$countWithParents = arrayCountRecursive($Hm, true);
+
+$countWithoutParents = arrayCountRecursive($a, false);
+$countWithParents = arrayCountRecursive($a, true);
 
 
 echo "not all elements of the array: {$countWithoutParents}<br>
