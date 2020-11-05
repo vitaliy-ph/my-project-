@@ -47,9 +47,9 @@ for($i=0; $i < $nruvOn; $i++) {
     }
 }
 
-$nrUsr = $nruvOn - $nrVst;
 
-$reOut = '<div id="uVon"><h4>Online: '. $nruvOn. '</h4>Visitors: '. $nrVst. '<br/>Users: '. $nrUsr. $usrOn. '</div>';
+
+$reOut = '<div id="uVon"><h4>Online: '. $nruvOn. '</h4>Visitors: '. $nrVst.  $usrOn. '</div>';
 
 
 if(!file_put_contents($fileTxt, implode("\n", $addRow))) $reOut = 'Error: Recording file not exists, or is not writable';
