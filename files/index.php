@@ -1,9 +1,8 @@
 <?php
 
 error_reporting(E_ALL);
+
 require_once __DIR__ . '/visit.php';
-
-
 
 $config = require __DIR__ . '/config.php';
 
@@ -19,9 +18,8 @@ if ($rout) {
 
 $actualDir = $actualRout;
 $actualInsideRout = ltrim(str_replace($baseDir, '', $actualRout), '/');
-///////////
 
-///
+
 
 if (mb_strlen($actualDir) < mb_strlen($baseDir)) {
     exit('Directory is not accessed');
@@ -57,10 +55,7 @@ if (rtrim($actualDir, '/') === $baseDir) {
     });
 }
 
-/////////////
 
-
-///
 ?>
 <!doctype html>
 <html lang="en">
@@ -73,17 +68,22 @@ if (rtrim($actualDir, '/') === $baseDir) {
 </head>
 <body>
 <table width="100%" border="1" cellpadding="10">
-    <tr>
+    <style>
 
+        a {
+            text-decoration: none; 
+        }
+    </style>
+    <tr>
         <td  class="breadcrumb">
-            <a href="http://skillup.local:8001/files/index.php?rout=">HOME</a>»
-            <a href="http://skillup.local:8001/files/index.php?rout=/123">123</a>»
-            <a href="http://skillup.local:8001/files/index.php?rout=123/new%20dir">new dir</a>»
+
+            <a href="http://skillup.local:8001/files/index.php?rout=">HOME»</a>
+            <a href="http://skillup.local:8001/files/index.php?rout=/123">123»</a>
+            <a href="http://skillup.local:8001/files/index.php?rout=123/new%20dir">new dir»</a>
 
         </td>
-
 <td>
-            <a href="signOut.php" style="float: right">Sign Out</a>
+    <a href="signOut.php" style="float: right">Sign Out</a>
         </td>
     </tr>
     <tr>
@@ -99,6 +99,7 @@ if (rtrim($actualDir, '/') === $baseDir) {
                 <input name="attachment[]" type="file" multiple="multiple" max="2">
                 <button type="submit">Upload</button>
             </form>
+
             <hr>
             <ul>
                 <?php foreach ($dirData as $dirRout) : ?>
