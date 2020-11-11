@@ -2,9 +2,10 @@
 
 error_reporting(E_ALL);
 
-require_once __DIR__ . '/visit.php';
-
 $config = require __DIR__ . '/config.php';
+
+require_once __DIR__ . '/security.php';
+require_once __DIR__ . '/visit.php';
 
 $baseDir = rtrim($config['baseDir'], '/');
 $webRout = rtrim($config['webRout'], '/');
@@ -60,6 +61,9 @@ if (rtrim($actualDir, '/') === $baseDir) {
 <!doctype html>
 <html lang="en">
 <head>
+    <style>
+        <?php echo file_get_contents("style.css"); ?>
+    </style>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -67,27 +71,20 @@ if (rtrim($actualDir, '/') === $baseDir) {
     <title>Document</title>
 </head>
 <body>
-<table width="100%" border="1" cellpadding="10">
-    <style>
-
-        a {
-            text-decoration: none; 
-        }
-    </style>
+<table  width="100%"  cellpadding="10">
     <tr>
         <td  class="breadcrumb">
-
-            <a href="http://skillup.local:8001/files/index.php?rout=">HOME»</a>
-            <a href="http://skillup.local:8001/files/index.php?rout=/123">123»</a>
-            <a href="http://skillup.local:8001/files/index.php?rout=123/new%20dir">new dir»</a>
+            <a href="http://skillup.local:8001/files/index.php?rout=">Home </a>
+            <a href="http://skillup.local:8001/files/index.php?rout=/123">123 </a>
+            <a href="http://skillup.local:8001/files/index.php?rout=123/new%20dir">new dir </a>
 
         </td>
 <td>
-    <a href="signOut.php" style="float: right">Sign Out</a>
+    <a class="buttons" href="signOut.php" style="float: right">Sign Out</a>
         </td>
     </tr>
     <tr>
-        <td width="30%" valign="top">
+        <td class="creat" width="30%" valign="top">
             <form action="createDir.php" method="post">
                 <input name="baseDir" value="<?= $actualInsideRout ?>" type="hidden">
                 <input name="name" type="text">
@@ -112,14 +109,7 @@ if (rtrim($actualDir, '/') === $baseDir) {
         </td>
     </tr>
     <tr>
-        <th>
-            <button> <a
-                style="
-        text-decoration: none;
-        margin: 0px;
-        padding: 3px" href="http://skillup.local:8001/files/index.php?rout=">HOME
-        </a> </button>
-        </th>
+
     </tr>
 </table>
 </body>

@@ -149,8 +149,8 @@ for($i = 0; $i < 1; $i++) {
 
 
 /*$count = count($info);
-for ($counter = 0; $counter < $count; $counter++) {
-    print 'task id' .$info[$counter]['name']. '3323' .$info[$counter]['id'];
+for ($counter.txt = 0; $counter.txt < $count; $counter.txt++) {
+    print 'task id' .$info[$counter.txt]['name']. '3323' .$info[$counter.txt]['id'];
 }*/
 
 

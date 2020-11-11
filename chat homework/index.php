@@ -11,13 +11,14 @@ while ($line = fgets($file, 1024)) {
     }
 }
 fclose($file);
-
+echo "<link rel='stylesheet' href='/chat%20homework/style.css'>";
 ?>
 
 
 <!doctype html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -48,7 +49,7 @@ fclose($file);
     <br><br>
 </form>
 
-<table width="100%" border="3">
+<table  width="100%" border="3">
     <tr>
         <th>Nickname</th>
         <th>Name</th>

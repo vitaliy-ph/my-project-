@@ -4,6 +4,8 @@ $config = require __DIR__ . '/security.php';
 
 $attachment = isset($_FILES['attachment']) ? reArrayFiles($_FILES['attachment']) : null;
 $baseInsideDir = $_POST['baseDir'] ?? '';
+//////////////////////
+/////////
 
 if (!$attachment) {
     exit('Uploading can not be completed');
@@ -23,8 +25,8 @@ foreach ($attachment as $attach) {
     $rout = sprintf(
         '%s/%s',
         $dir,
-        trim($attach['name'])
-    );
+        trim($attach['name'] ));
+
     move_uploaded_file($attach['tmp_name'], $rout);
 }
 
@@ -46,6 +48,4 @@ function reArrayFiles(array $filePost) : array
 
     return $fileArray;
 }
-
-
 

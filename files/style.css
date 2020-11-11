@@ -1,0 +1,117 @@
+.breadcrumb a:after,
+.breadcrumb span:after {
+    content: '';
+    position:absolute;
+    padding: unset;
+
+    width: 20px;
+    height: 20px;
+    transform: scale(0.7) rotate(45deg);
+    z-index: 1;
+    box-shadow: 1px -1px 0 1px #F56433;
+    border-radius: 0 3px 0 3px ;
+    background: white;
+    transition: all 0.5s;
+
+}
+.breadcrumb a,
+.breadcrumb span {
+    background: white;
+    color: black;
+    transition: all 0.5s;
+    text-decoration: none;
+    outline: none;
+    font-size: 12px;
+    line-height: 20px;
+    padding: 1px 11px 1px 13px;
+    position: relative;
+    font-size: 13px;
+    font-family: Verdana, sans-serif;
+    border: 2px solid #F56433;
+    border-right: 0;
+    margin: 5px 2px;
+    border-radius: 8px 0 0 8px;
+}
+
+.breadcrumb a:hover{
+    background: #F56433;
+}
+.breadcrumb a:hover:after {
+    background: #F56433;
+}
+
+.breadcrumb{
+    text-align: left;
+}
+.creat{
+    text-align: left;
+}
+
+a {
+    text-decoration: none;
+}
+
+table   {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    text-align: center;
+    border-collapse: collapse;
+    border-spacing: 50px;
+    background: #DCDCDC;
+    border-radius: 15px;
+    border: 1px;
+}
+ul {
+    font-size: 15px;
+    padding: 10px 20px;
+    text-align: left ;
+    color: #F56433;
+
+
+}
+tbody tr:nth-child(1) {
+    border-bottom: 2px solid #F56433;
+
+}
+
+
+
+
+
+
+
+.buttons {
+    display: inline-block;
+    font-family: arial,sans-serif;
+    font-size: 11px;
+    color: rgb(205,216,228);
+    text-shadow: 0 -1px rgb(46,53,58);
+    text-decoration: none;
+    user-select: none;
+    line-height: 2em;
+    padding: 1px 1.2em;
+    outline: none;
+    border: 1px solid rgba(33,43,52,1);
+    border-radius: 3px;
+    background: rgb(81,92,102) linear-gradient(rgb(81,92,102), rgb(69,78,87));
+    box-shadow:
+            inset 0 1px rgba(101,114,126,1),
+            inset 0 0 1px rgba(140,150,170,.8),
+            0 1px rgb(83,94,104),
+            0 0 1px rgb(86,96,106);
+}
+.buttons:active {
+    box-shadow:
+            inset 0 1px 3px rgba(0,10,20,.5),
+            0 1px rgb(83,94,104),
+            0 0 1px rgb(86,96,106);
+}
+.buttons:focus:not(:active) {
+    border: 1px solid rgb(22,32,43);
+    border-bottom: 1px solid rgb(25,34,45);
+    background: rgb(53,61,71);
+    box-shadow:
+            inset 0 1px 3px rgba(0,10,20,.5),
+            0 1px rgb(83,94,104),
+            0 0 1px rgb(86,96,106);
+    pointer-events: none;
+}
