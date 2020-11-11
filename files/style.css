@@ -1,18 +1,9 @@
-.breadcrumb a:after,
-.breadcrumb span:after {
-    content: '';
-    position:absolute;
-    padding: unset;
 
-    width: 20px;
-    height: 20px;
-    transform: scale(0.7) rotate(45deg);
-    z-index: 1;
-    box-shadow: 1px -1px 0 1px #F56433;
-    border-radius: 0 3px 0 3px ;
-    background: white;
-    transition: all 0.5s;
-
+.breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    counter-reset: flag;
+    margin: 1px;
 }
 .breadcrumb a,
 .breadcrumb span {
@@ -22,27 +13,45 @@
     text-decoration: none;
     outline: none;
     font-size: 12px;
-    line-height: 20px;
-    padding: 1px 11px 1px 13px;
+    line-height: 26px;
+    padding: 0 10px 0 26px;
     position: relative;
     font-size: 13px;
     font-family: Verdana, sans-serif;
-    border: 2px solid #F56433;
+    border: 2px solid 	#F56433;
     border-right: 0;
-    margin: 5px 2px;
+    margin: 2px 0;
     border-radius: 8px 0 0 8px;
+}
+.breadcrumb a:first-child {
+    padding-left: 4px;
 }
 
 .breadcrumb a:hover{
     background: #F56433;
 }
-.breadcrumb a:hover:after {
-    background: #F56433;
+
+.breadcrumb a:after,
+.breadcrumb span:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -12px;
+    width: 26px;
+    height: 26px;
+    transform: scale(0.7) rotate(45deg);
+    z-index: 1;
+    box-shadow: 2px -2px 0 2px #F56433;
+    border-radius: 0 5px 0 50px;
+    background: white;
+    transition: all 0.5s;
 }
 
-.breadcrumb{
-    text-align: left;
-}
+
+
+
+
+
 .creat{
     text-align: left;
 }
@@ -57,8 +66,8 @@ table   {
     border-collapse: collapse;
     border-spacing: 50px;
     background: #DCDCDC;
-    border-radius: 15px;
-    border: 1px;
+    border-radius: 10px;
+    border: 2px;
 }
 ul {
     font-size: 15px;

@@ -74,9 +74,9 @@ if (rtrim($actualDir, '/') === $baseDir) {
 <table  width="100%"  cellpadding="10">
     <tr>
         <td  class="breadcrumb">
-            <a href="http://skillup.local:8001/files/index.php?rout=">Home </a>
-            <a href="http://skillup.local:8001/files/index.php?rout=/123">123 </a>
-            <a href="http://skillup.local:8001/files/index.php?rout=123/new%20dir">new dir </a>
+            <a href="http://skillup.local:8001/files/index.php?rout=">Home</a>
+            <a href="http://skillup.local:8001/files/index.php?rout=/123">123</a>
+            <a href="http://skillup.local:8001/files/index.php?rout=123/new%20dir">new dir</a>
 
         </td>
 <td>
@@ -93,7 +93,7 @@ if (rtrim($actualDir, '/') === $baseDir) {
             <hr>
             <form action="uploadFiles.php" method="post" enctype="multipart/form-data">
                 <input name="baseDir" value="<?= $actualInsideRout ?>" type="hidden">
-                <input name="attachment[]" type="file" multiple="multiple" max="2">
+                <input   name="attachment[]" type="file" multiple="multiple" max="2">
                 <button type="submit">Upload</button>
             </form>
 
