@@ -73,14 +73,14 @@ if (rtrim($actualDir, '/') === $baseDir) {
 <body>
 <table  width="100%"  cellpadding="10">
     <tr>
-        <td  class="breadcrumb">
+        <td class="breadcrumb">
             <a href="http://skillup.local:8001/files/index.php?rout=">Home</a>
             <a href="http://skillup.local:8001/files/index.php?rout=/123">123</a>
             <a href="http://skillup.local:8001/files/index.php?rout=123/new%20dir">new dir</a>
 
         </td>
 <td>
-    <a class="buttons" href="signOut.php" style="float: right">Sign Out</a>
+    <a class="button28" href="signOut.php" style="float: right">Sign Out</a>
         </td>
     </tr>
     <tr>
@@ -88,17 +88,17 @@ if (rtrim($actualDir, '/') === $baseDir) {
             <form action="createDir.php" method="post">
                 <input name="baseDir" value="<?= $actualInsideRout ?>" type="hidden">
                 <input name="name" type="text">
-                <button type="submit">Create Dir</button>
+                <button class="button28" type="submit">Create Dir</button>
             </form>
             <hr>
             <form action="uploadFiles.php" method="post" enctype="multipart/form-data">
                 <input name="baseDir" value="<?= $actualInsideRout ?>" type="hidden">
                 <input   name="attachment[]" type="file" multiple="multiple" max="2">
-                <button type="submit">Upload</button>
+                <button class="button28" type="submit">Upload</button>
             </form>
 
             <hr>
-            <ul>
+            <ul class="text">
                 <?php foreach ($dirData as $dirRout) : ?>
                     <li><a href="?rout=<?= $actualInsideRout ?>/<?= $dirRout ?>"><?= $dirRout ?></a></li>
                 <?php endforeach; ?>
