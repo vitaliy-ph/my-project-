@@ -40,7 +40,7 @@ if (is_file($actualRout)) {
         default:
             $content = <<<HTML
                 File {$rout} can not be processed<br>
-                Try to <a href="downloadFile.php?rout={$rout}" target="_blank">download</a>
+                Try to <a class="button28" href="downloadFile.php?rout={$rout}" target="_blank">download</a>
             HTML;
     }
 
@@ -88,13 +88,13 @@ if (rtrim($actualDir, '/') === $baseDir) {
             <form action="createDir.php" method="post">
                 <input name="baseDir" value="<?= $actualInsideRout ?>" type="hidden">
                 <input name="name" type="text">
-                <button class="button28" type="submit">Create Dir</button>
+                 <button class="button27"  type="submit">Create Dir</button>
             </form>
             <hr>
             <form action="uploadFiles.php" method="post" enctype="multipart/form-data">
                 <input name="baseDir" value="<?= $actualInsideRout ?>" type="hidden">
                 <input   name="attachment[]" type="file" multiple="multiple" max="2">
-                <button class="button28" type="submit">Upload</button>
+                <button class="button27"  type="submit">Upload</button>
             </form>
 
             <hr>
