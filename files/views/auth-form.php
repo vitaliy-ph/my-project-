@@ -1,9 +1,6 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <style>
-        <?php echo file_get_contents("stl.css"); ?>
-    </style>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -11,7 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-<form action="auth.php" method="post">
+<form action="/files/auth.php" method="post">
     <div>
         <label for="login">Login</label>
         <input type="text" name="login" id="login">

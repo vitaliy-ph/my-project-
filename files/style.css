@@ -79,13 +79,16 @@ a {
     text-decoration: none;
 }
 
+
+
 table   {
     font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
     text-align: center;
     border-collapse: collapse;
-    border-spacing: 50px;
+    border-spacing: 30px;
     background:  #474747;
     border-radius: 10px;
+
 
 }
 
@@ -178,12 +181,6 @@ tr, td, hr, text, input, a {
 }
 
 
-
-
-
-
-
-
 button.button27 {
     position: relative;
     display: inline-block;
@@ -214,3 +211,10 @@ button.button27:active {
             0 1px 1px rgba(255,255,255,.1);
 }
 
+
+
+
+
+.tb {
+    color: #F56433;
+}

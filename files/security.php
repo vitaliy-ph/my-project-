@@ -8,4 +8,3 @@ if($isGuest) {
     require __DIR__ . '/views/auth-form.php';
     exit;
 }
-

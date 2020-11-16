@@ -79,8 +79,8 @@ if (rtrim($actualDir, '/') === $baseDir) {
             <a href="http://skillup.local:8001/files/index.php?rout=123/new%20dir">new dir</a>
 
         </td>
-<td>
-    <a class="button28" href="signOut.php" style="float: right">Sign Out</a>
+        <td>
+            <a class="button28" href="signOut.php" style="float: right">Sign Out</a>
         </td>
     </tr>
     <tr>
@@ -88,7 +88,7 @@ if (rtrim($actualDir, '/') === $baseDir) {
             <form action="createDir.php" method="post">
                 <input name="baseDir" value="<?= $actualInsideRout ?>" type="hidden">
                 <input name="name" type="text">
-                 <button class="button27"  type="submit">Create Dir</button>
+                <button class="button27"  type="submit">Create Dir</button>
             </form>
             <hr>
             <form action="uploadFiles.php" method="post" enctype="multipart/form-data">
