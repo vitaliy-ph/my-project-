@@ -4,6 +4,7 @@
 
 require_once __DIR__ . '/../models/categories.php';
 
+
 function actionShowAll()
 {
     $categories = getCategories();
