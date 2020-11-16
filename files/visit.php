@@ -51,7 +51,7 @@ for($i=0; $i < $nruvOn; $i++) {
 
 
 
-$reOut = '<div class="vis" id="uVon"><h4>Online: '. $nruvOn. '</h4>Visitors: '. $nrVst.  $usrOn. '</div>';
+$reOut = ' <div id="uVon"><h4 class="tb">Online: '. $nruvOn. '</h4>Visitors: '. $nrVst.  $usrOn. '</div>';
 
 
 if(!file_put_contents($fileTxt, implode("\n", $addRow))) $reOut = 'Error: Recording file not exists, or is not writable';
@@ -69,3 +69,5 @@ fputs($myFile,$count);
 fclose($myFile);
 ?>
 <span>Views: <?=$count?></span>
+<style><?php echo file_get_contents("styleChat.css"); ?></style>
+
