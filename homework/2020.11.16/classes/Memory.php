@@ -3,32 +3,32 @@
 
 class Memory
 {
-    public const SCHOOL = 'skillUp';
+public const SCHOOL = 'skillUp';
 
 
-    public string $name;
-    public string $compLang;
+public string $name;
+public string $compLang;
 
-    public function __construct(string $name, string $compLang, bool $mentor = false)
-    {
-        $this->name = $name;
-        $this->compLang = $compLang;
-
-        $school = self::SCHOOL;
-        $memory = $mentor ? 'mentor' : 'student';
-
-        echo "{$school} {$this->compLang}-{$memory} {$this->name} successfully created.<br><br>";
-    }
+public function __construct(string $name, string $compLang, bool $mentor = false)
+{
+$this->name = $name;
+$this->compLang = $compLang;
 
 
-    public function getName(): string
-    {
-        return $this->name;
-    }
+$memory = $mentor ? 'mentor' : 'student';
+
+echo "{$this->compLang}-{$memory} {$this->name} <br><br>";
+}
 
 
-    public function getCompLang (): string
-    {
-        return $this->compLang;
-    }
+public function getName(): string
+{
+return $this->name;
+}
+
+
+public function getCompLang (): string
+{
+return $this->compLang;
+}
 }

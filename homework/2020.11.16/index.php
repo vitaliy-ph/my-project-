@@ -4,22 +4,16 @@ declare(strict_types=1);
 error_reporting(E_ALL);
 
 
+require_once __DIR__ . '/./classes/Memory.php';
+require_once __DIR__ . '/./classes/Student.php';
+require_once __DIR__ . '/./classes/Mentor.php';
+require_once __DIR__ . '/./classes/Homework.php';
 
-include_once(__DIR__ . '/func.php');
 
-$autoloaderFunction = 'classesAutoloader';
-
-if (!function_exists($autoloaderFunction)) {
-    die('Autoloader error!');
-}
-
-spl_autoload_register($autoloaderFunction);
-
-/*var_dump(Memory::SCHOOL);*/
 
 $mentor = new Mentor('Homer Simpson', 'PHP', true);
 $student = new Student('Bart Simpson', $mentor->getCompLang(), false );
-$student2 = new Student('Petter Grifin', $mentor->getCompLang(), false );
+$student2 = new Student('Peter Griffin', $mentor->getCompLang(), false );
 
 $Hm = new Homework();
 
@@ -39,4 +33,3 @@ $student2->makeHm();
 $student->checkHm($mentor);
 
 $student2->checkHm($mentor);
-

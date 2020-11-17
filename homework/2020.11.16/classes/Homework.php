@@ -22,16 +22,16 @@ class Homework
                     'checked' => false,
                 ]
             ];
-            echo "{$author->getName()} has a new homework
-            with date equal to {$HmDate}: {$HmDescribe}.<br><br>";
+            echo "{$author->getName()}  new homework,
+            date{$HmDate}: {$HmDescribe}.<br><br>";
         }
     }
 
     /**
      * @return array
      */
-        public function getHm(): array
-        {
-            return $this->Hm;
-        }
+    public function getHm(): array
+    {
+        return $this->Hm;
+    }
 }

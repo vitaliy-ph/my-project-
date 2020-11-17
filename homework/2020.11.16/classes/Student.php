@@ -21,7 +21,7 @@ class Student extends Memory
             }
         }
 
-        echo "{$this -> getName()}: done his homework!<br><br>";
+        echo "{$this -> getName()}: done his homework<br><br>";
     }
     public function checkHm(object $mentor): void
     {
@@ -33,7 +33,7 @@ class Student extends Memory
                 }
             }
             unset($HmData, $status);
-            echo "{$mentor->getName()} checked {$this->getName()}  homework!<br><br>";
+            echo "{$mentor->getName()}: checked {$this->getName()} homework.<br><br>";
         }
     }
 }
