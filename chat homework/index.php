@@ -1,6 +1,4 @@
 <?php
-
-
 $messages = [];
 
 $file = fopen(__DIR__ . '/storage', 'rb');
@@ -11,7 +9,7 @@ while ($line = fgets($file, 1024)) {
     }
 }
 fclose($file);
-echo "<link rel='stylesheet' href='/chat%20homework/style.css'>";
+
 ?>
 
 

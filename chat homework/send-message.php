@@ -65,5 +65,5 @@ try {
 file_put_contents(__DIR__ . '/storage', $content, FILE_APPEND);
 
 
-header('location: /chat homework/');
+header('location: /chat homework/index.php');
 exit;
