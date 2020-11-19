@@ -3,7 +3,7 @@
 
 return [
     'baseDir' => __DIR__ . '/storage',
-    'webRout' => '/homework/homeworkFiles/files/storage',
+    'webRout' => '/homework/fileManager/files/storage',
     'db' => [
         'host' => 'db',
         'user' => 'skillup_user',

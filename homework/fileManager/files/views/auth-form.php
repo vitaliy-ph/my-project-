@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-<form action="/homework/homeworkFiles/files/auth.php" method="post">
+<form action="/homework/fileManager/files/auth.php" method="post">
     <div>
         <label for="login">Login</label>
         <input type="text" name="login" id="login">

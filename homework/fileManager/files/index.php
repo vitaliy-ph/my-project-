@@ -74,9 +74,9 @@ if (rtrim($actualDir, '/') === $baseDir) {
 <table  width="100%"  cellpadding="10">
     <tr>
         <td class="breadcrumb">
-            <a href="http://skillup.local:8001/homework/homeworkFiles/files/index.php">Home</a>
-            <a href="http://skillup.local:8001/homework/homeworkFiles/files/index.php?rout=/123">123</a>
-            <a href="http://skillup.local:8001/homework/homeworkFiles/files/index.php?rout=123/new%20dir">new dir</a>
+            <a href="http://skillup.local:8001/homework/fileManager/files/index.php">Home</a>
+            <a href="http://skillup.local:8001/homework/fileManager/files/index.php?rout=/123">123</a>
+            <a href="http://skillup.local:8001/homework/fileManager/files/index.php?rout=123/new%20dir">new dir</a>
 
         </td>
         <td>
