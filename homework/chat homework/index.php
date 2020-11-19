@@ -24,7 +24,7 @@ fclose($file);
     <title>Document</title>
 </head>
 <body>
-<form action="/chat homework/send-message.php" method="post">
+<form action="/homework/chat homework/send-message.php" method="post">
     <div>
         <label for="nickname">Nickname</label>
         <input type="text" name="nickname" id="nickname"  required>
