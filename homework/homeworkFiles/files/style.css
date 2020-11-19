@@ -1,0 +1,220 @@
+.breadcrumb:hover, a:active {
+    color: #C35600;
+    text-decoration: none;
+}
+
+
+.breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    counter-reset: flag;
+    margin: 1px;
+}
+.breadcrumb a,
+.breadcrumb span {
+    background: #787878;
+    color: white;
+    transition: all 0.5s;
+    text-decoration: none;
+    outline: none;
+    font-size: 12px;
+    line-height: 26px;
+    padding: 0 10px 0 26px;
+    position: relative;
+    font-size: 13px;
+    font-family: Verdana, sans-serif;
+    border: 2px solid 	#F56433;
+    border-right: 0;
+    margin: 2px 0;
+    border-radius: 8px 0 0 8px;
+
+}
+.breadcrumb a:first-child {
+    padding-left: 4px;
+}
+
+
+
+
+
+a:hover, a:active {
+    color          : #C35600;
+    text-decoration: none;
+}
+
+
+
+
+
+
+.breadcrumb a:hover{
+    background: #F56433;
+}
+.breadcrumb a:hover{
+    color: black;
+}
+
+.breadcrumb a:after,
+.breadcrumb span:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -12px;
+    width: 26px;
+    height: 26px;
+    transform: scale(0.7) rotate(45deg);
+    z-index: 1;
+    box-shadow: 2px -2px 0 2px #F56433;
+    border-radius: 0 5px 0 50px;
+    background: #787878;
+    transition: all 0.5s;
+}
+
+
+.creat{
+    text-align: left;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+
+table   {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    text-align: center;
+    border-collapse: collapse;
+    border-spacing: 30px;
+    background:  #474747;
+    border-radius: 10px;
+
+
+}
+
+
+
+li{
+    color: #F56433;
+}
+
+tbody tr:nth-child(1) {
+    border-bottom: 2px solid #F56433;
+
+}
+
+
+.buttons {
+    display: inline-block;
+    font-family: arial,sans-serif;
+    font-size: 11px;
+    color: rgb(205,216,228);
+    text-shadow: 0 -1px rgb(46,53,58);
+    text-decoration: none;
+    user-select: none;
+    line-height: 2em;
+    padding: 1px 1.2em;
+    outline: none;
+    border: 1px solid rgba(33,43,52,1);
+    border-radius: 3px;
+    background: rgb(81,92,102) linear-gradient(rgb(81,92,102), rgb(69,78,87));
+    box-shadow:
+            inset 0 1px rgba(101,114,126,1),
+            inset 0 0 1px rgba(140,150,170,.8),
+            0 1px rgb(83,94,104),
+            0 0 1px rgb(86,96,106);
+}
+.buttons:active {
+    box-shadow:
+            inset 0 1px 3px rgba(0,10,20,.5),
+            0 1px rgb(83,94,104),
+            0 0 1px rgb(86,96,106);
+}
+.buttons:focus:not(:active) {
+    border: 1px solid rgb(22,32,43);
+    border-bottom: 1px solid rgb(25,34,45);
+    background: rgb(53,61,71);
+    box-shadow:
+            inset 0 1px 3px rgba(0,10,20,.5),
+            0 1px rgb(83,94,104),
+            0 0 1px rgb(86,96,106);
+    pointer-events: none;
+}
+
+
+
+
+
+a.button28 {
+    position: relative;
+    display: inline-block;
+    font-size: 75%;
+    font-weight: 70;
+    color: rgb(209,209,217);
+    text-decoration: none;
+    text-shadow: 0 -1px 2px rgba(0,0,0,.2);
+    padding: .5em 1em;
+    outline: none;
+    border-radius: 3px;
+    background: linear-gradient(rgb(110,112,120), rgb(81,81,86)) rgb(110,112,120);
+    box-shadow:
+            0 1px rgba(255,255,255,.2) inset,
+            0 3px 5px rgba(0,1,6,.5),
+            0 0 1px 1px rgba(0,1,6,.2);
+    transition: .2s ease-in-out;
+}
+a.button28:hover:not(:active) {
+    background: linear-gradient(rgb(126,126,134), rgb(70,71,76)) rgb(126,126,134);
+}
+a.button28:active {
+    top: 1px;
+    background: linear-gradient(rgb(76,77,82), rgb(56,57,62)) rgb(76,77,82);
+    box-shadow:
+            0 0 1px rgba(0,0,0,.5) inset,
+            0 2px 3px rgba(0,0,0,.5) inset,
+            0 1px 1px rgba(255,255,255,.1);
+}
+
+tr, td, hr, text, input, a {
+    color: rgb(205,216,228);
+    transition: all 0.5s;
+}
+
+
+button.button27 {
+    position: relative;
+    display: inline-block;
+    font-size: 65%;
+    font-weight: 700;
+    color: rgb(209,209,217);
+    text-decoration: none;
+    text-shadow: 0 -1px 2px rgba(0,0,0,.2);
+    padding: .5em 1em;
+    outline: none;
+    border-radius: 8px;
+    background: linear-gradient(rgb(110,112,120), rgb(81,81,86)) rgb(110,112,120);
+    box-shadow:
+            0 1px rgba(255,255,255,.2) inset,
+            0 3px 5px rgba(0,1,6,.5),
+            0 0 1px 1px rgba(0,1,6,.2);
+    transition: .2s ease-in-out;
+}
+button.button27:hover:not(:active) {
+    background: linear-gradient(rgb(126,126,134), rgb(70,71,76)) rgb(126,126,134);
+}
+button.button27:active {
+    top: 1px;
+    background: linear-gradient(rgb(76,77,82), rgb(56,57,62)) rgb(76,77,82);
+    box-shadow:
+            0 0 1px rgba(0,0,0,.5) inset,
+            0 2px 3px rgba(0,0,0,.5) inset,
+            0 1px 1px rgba(255,255,255,.1);
+}
+
+
+
+
+
+.tb {
+    color: #F56433;
+}
