@@ -29,7 +29,6 @@ foreach ($attachment as $attach) {
         trim($attach['name'] ));
 
 
-
     if($attach ['size'] >  3145728) {
         exit('File must be no larger than 3 MB');
     }else {
