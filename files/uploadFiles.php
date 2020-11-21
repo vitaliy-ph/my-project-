@@ -2,11 +2,15 @@
 
 $config = require __DIR__ . '/security.php';
 
-$attachment = isset($_FILES['attachment']) ? reArrayFiles($_FILES['attachment']) : null;
+$attachment = isset($_FILES['attachment'] ) ? reArrayFiles($_FILES['attachment']) : null;
 $baseInsideDir = $_POST['baseDir'] ?? '';
-//////////////////////
-/////////
 
+
+
+//////////////////////////////////////////////
+
+
+///////////////////////////////
 if (!$attachment) {
     exit('Uploading can not be completed');
 }
@@ -27,7 +31,13 @@ foreach ($attachment as $attach) {
         $dir,
         trim($attach['name'] ));
 
+
+
+if($attach ['size'] >  3145728) {
+    exit('File must be no larger than 3 MB');
+}else {
     move_uploaded_file($attach['tmp_name'], $rout);
+    }
 }
 
 header("Location: index.php?rout={$baseInsideDir}");

@@ -95,8 +95,9 @@ if (rtrim($actualDir, '/') === $baseDir) {
                 <input name="baseDir" value="<?= $actualInsideRout ?>" type="hidden">
                 <input   name="attachment[]" type="file" multiple="multiple" max="2">
                 <button class="button27"  type="submit">Upload</button>
-            </form>
 
+
+            </form>
             <hr>
             <ul class="text">
                 <?php foreach ($dirData as $dirRout) : ?>

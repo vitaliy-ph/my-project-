@@ -1,4 +1,5 @@
 <?php
+
 $messages = [];
 
 $file = fopen(__DIR__ . '/storage', 'rb');

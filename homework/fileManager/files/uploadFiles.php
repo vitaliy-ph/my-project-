@@ -20,6 +20,7 @@ $dir = sprintf(
 );
 
 
+
 foreach ($attachment as $attach) {
 
     $rout = sprintf(
@@ -27,9 +28,14 @@ foreach ($attachment as $attach) {
         $dir,
         trim($attach['name'] ));
 
-    move_uploaded_file($attach['tmp_name'], $rout);
-}
 
+
+    if($attach ['size'] >  3145728) {
+        exit('File must be no larger than 3 MB');
+    }else {
+        move_uploaded_file($attach['tmp_name'], $rout);
+    }
+}
 header("Location: index.php?rout={$baseInsideDir}");
 exit;
 
