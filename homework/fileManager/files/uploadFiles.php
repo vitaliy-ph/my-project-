@@ -28,22 +28,40 @@ foreach ($attachment as $attach) {
         $dir,
         trim($attach['name'] ));
 
+    if (($attach ['type'] == "image/jpeg") ||
+        ($attach ['type'] == "video/mp4") ||
+        ($attach ['type'] == "image/png"))
+    {
+        move_uploaded_file($attach['tmp_name'], $rout);
+    }else{
+        exit('The file type must be (image/jpeg, video/mp4, video/mp4). ');
+    }
 
-    if($attach ['size'] >  3145728) {
+    if ($attach ['size'] > 3145728) {
         exit('File must be no larger than 3 MB');
-    }else {
+    }
+
+    else {
         move_uploaded_file($attach['tmp_name'], $rout);
     }
 }
+
 header("Location: index.php?rout={$baseInsideDir}");
 exit;
 
 
+
 function reArrayFiles(array $filePost) : array
 {
+
     $fileArray = [];
     $fileCount = count($filePost['name']);
     $fileKeys = array_keys($filePost);
+    if ($fileCount > 5) {
+        exit('The max number of uploaded files has been exceeded');
+    }
+
+
 
     for ($i = 0; $i < $fileCount; $i++) {
         foreach ($fileKeys as $key) {
@@ -53,4 +71,5 @@ function reArrayFiles(array $filePost) : array
 
     return $fileArray;
 }
+
 
