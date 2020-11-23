@@ -14,8 +14,9 @@ class Homework
      */
         public function setDescribe(string $describe): void
         {
-        $this->describe = $describe;
+            $this->describe = $describe;
         }
+
 
     /**
      * @param string $homework
@@ -23,9 +24,8 @@ class Homework
      */
         public function setHomework(string $homework): void
         {
-         $this->homework = $homework;
+            $this->homework = $homework;
         }
-
 
     /**
      * @param string $name
@@ -40,7 +40,7 @@ class Homework
      */
         public function getName(): string
         {
-        return $this->name;
+            return $this->name;
         }
 
 

@@ -18,6 +18,9 @@ class Student extends Homework
         return $date;
     }
 
+    /**
+     * @return string
+     */
     public function passHomework(): string
     {
         return 'passed homework';

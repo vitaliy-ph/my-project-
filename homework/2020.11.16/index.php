@@ -26,7 +26,7 @@ $student->setDescribe('create a database on the host');
 $student2 = new Student();
 $student2->setName('Bender Rodriguez');
 $student2->setHomework('I accepted homework №2');
-$student2->setDescribe('create controllesr in OOP');
+$student2->setDescribe('create controllers in OOP');
 
 
 var_dump($mentor,$student,$student2);
@@ -36,11 +36,10 @@ echo "{$student->getName()}: deadline({$student->makeHomework()})", PHP_EOL;
 echo "{$student2->getName()}: deadline({$student2->makeHomework()})", PHP_EOL;
 
 
-
 echo "Bart Simpson: {$student->passHomework()}",PHP_EOL;
 echo "Bender Rodriguez: {$student2->passHomework()}",PHP_EOL;
 
-echo"Homer Simpson: {$mentor->checkHomework()}",PHP_EOL;
+echo"{$mentor->getName()}: {$mentor->checkHomework()}",PHP_EOL;
 
-echo "Homer Simpson: Bart Simpson {$mentor->homeworkDone()}",PHP_EOL;
-echo "Homer Simpson: Bender Rodriguez {$mentor->homeworkDone()}",PHP_EOL;
+echo "{$mentor->getName()}: {$student->getName()} {$mentor->homeworkDone()}",PHP_EOL;
+echo "{$mentor->getName()}: {$student->getName()} {$mentor->homeworkDone()}",PHP_EOL;
