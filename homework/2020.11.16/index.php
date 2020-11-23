@@ -36,8 +36,8 @@ echo "{$student->getName()}: deadline({$student->makeHomework()})", PHP_EOL;
 echo "{$student2->getName()}: deadline({$student2->makeHomework()})", PHP_EOL;
 
 
-echo "Bart Simpson: {$student->passHomework()}",PHP_EOL;
-echo "Bender Rodriguez: {$student2->passHomework()}",PHP_EOL;
+echo "{$student->getName()}: {$student->passHomework()}",PHP_EOL;
+echo "{$student2->getName()}: {$student2->passHomework()}",PHP_EOL;
 
 echo"{$mentor->getName()}: {$mentor->checkHomework()}",PHP_EOL;
 
