@@ -13,28 +13,33 @@ var_dump(Homework::SCHOOL);
 $mentor = new Mentor();
 $mentor->setName('Homer Simpson');
 $mentor->setHomework('I have a two new homework');
-$mentor->setDescribe('№1 create a database on the host, №2 create classes in OOP');
+$mentor->setDescribe('№1 create a database on the host, №2 create controllesr in OOP');
 
 
 
 $student = new Student();
 $student->setName('Bart Simpson');
 $student->setHomework('I accepted homework №1');
-$student->setDescribe('create a database on the host');
+$student->getDescribe('create a database on the host');
 
 
 $student2 = new Student();
 $student2->setName('Bender Rodriguez');
-$student2->setHomework('I accepted homework №2');
-$student2->setDescribe('create classes in OOP');
+$student2->getHomework('I accepted homework №2');
+$student2->getDescribe('create controllesr in OOP');
 
 
 var_dump($mentor,$student,$student2);
 
 
-echo "{$student->getName()}: deadline({$student->makeHomework()})", PHP_EOL;
-echo "{$student2->getName()}: deadline({$student2->makeHomework()})", PHP_EOL;
-
+try {
+    echo "{$student->getName()}: deadline({$student->makeHomework()})", PHP_EOL;
+} catch (Exception $e) {
+}
+try {
+    echo "{$student2->getName()}: deadline({$student2->makeHomework()})", PHP_EOL;
+} catch (Exception $e) {
+}
 
 
 echo "Bart Simpson: {$student->passHomework()}",PHP_EOL;
