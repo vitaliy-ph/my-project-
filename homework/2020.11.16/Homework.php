@@ -18,14 +18,6 @@ class Homework
         }
 
     /**
-     * @param string $describe
-     */
-        public function getDescribe(string $describe): void
-        {
-            $this->describe = $describe;
-        }
-
-    /**
      * @param string $homework
      * @return void
      */
@@ -34,13 +26,6 @@ class Homework
          $this->homework = $homework;
         }
 
-    /**
-     * @param string $homework
-     */
-        public function getHomework(string $homework): void
-        {
-        $this->homework = $homework;
-        }
 
     /**
      * @param string $name
