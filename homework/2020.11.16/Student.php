@@ -8,7 +8,7 @@ class Student extends Homework
      * @return string
      * @throws Exception
      */
-    public function makeHomework(): string
+    public function deadline(): string
     {
         $days = random_int(1, 10);
         $date = (new DateTime('now'))->modify("+{$days} day")->format('Y-m-d');

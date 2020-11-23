@@ -12,6 +12,9 @@ class Mentor extends Homework
         return 'checking homework';
     }
 
+    /**
+     * @return string
+     */
     public function homeworkDone(): string
     {
         return 'homework done!';
