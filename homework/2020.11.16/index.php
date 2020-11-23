@@ -21,19 +21,19 @@ $student = new Student();
 $student->setName('Bart Simpson');
 $student->setHomework('I accepted homework №1');
 $student->setDescribe('create a database on the host');
+$student->getName();
+$student->makeHomework();
 
 
 $student2 = new Student();
 $student2->setName('Bender Rodriguez');
 $student2->setHomework('I accepted homework №2');
 $student2->setDescribe('create controllers in OOP');
+$student2->getName();
+$student2->makeHomework();
 
 
 var_dump($mentor,$student,$student2);
-
-
-echo "{$student->getName()}: deadline({$student->makeHomework()})", PHP_EOL;
-echo "{$student2->getName()}: deadline({$student2->makeHomework()})", PHP_EOL;
 
 
 echo "{$student->getName()}: {$student->passHomework()}",PHP_EOL;
@@ -42,4 +42,4 @@ echo "{$student2->getName()}: {$student2->passHomework()}",PHP_EOL;
 echo"{$mentor->getName()}: {$mentor->checkHomework()}",PHP_EOL;
 
 echo "{$mentor->getName()}: {$student->getName()} {$mentor->homeworkDone()}",PHP_EOL;
-echo "{$mentor->getName()}: {$student->getName()} {$mentor->homeworkDone()}",PHP_EOL;
+echo "{$mentor->getName()}: {$student2->getName()} {$mentor->homeworkDone()}",PHP_EOL;
