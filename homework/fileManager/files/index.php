@@ -56,7 +56,7 @@ if (rtrim($actualDir, '/') === $baseDir) {
     });
 }
 
-
+$breadcrumbs = explode('/',  $actualInsideRout);
 ?>
 <!doctype html>
 <html lang="en">
@@ -74,10 +74,19 @@ if (rtrim($actualDir, '/') === $baseDir) {
 <table  width="100%"  cellpadding="10">
     <tr>
         <td class="breadcrumb">
-            <a href="http://skillup.local:8001/homework/fileManager/files/index.php">Home</a>
-            <a href="http://skillup.local:8001/homework/fileManager/files/index.php?rout=/123">123</a>
-            <a href="http://skillup.local:8001/homework/fileManager/files/index.php?rout=123/new%20dir">new dir</a>
-
+            <a href="?rout=">Home</a>
+            <?php foreach ($breadcrumbs as $explode):?>
+                <?php
+                $exp = '';
+                $count = 0;
+                while($breadcrumbs[$count] !== $explode) {
+                    $exp .= $breadcrumbs[$count] . '/';
+                    $count++;
+                }
+                $trim = rtrim($exp, '/');
+                ?>
+                <a href="?rout=<?= "{$trim}/{$explode}"?>"><?= $explode ?></a>
+            <?php endforeach; ?>
         </td>
         <td>
             <a class="button28" href="signOut.php" style="float: right">Sign Out</a>
