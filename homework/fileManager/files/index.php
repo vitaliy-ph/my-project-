@@ -75,17 +75,17 @@ $breadcrumbs = explode('/',   $actualInsideRout);
     <tr>
         <td class="breadcrumb">
             <a href="/homework/fileManager/files/?rout=/">Home</a>
-            <?php foreach ($breadcrumbs as $explode):?>
+            <?php foreach ($breadcrumbs as $dirRout):?>
                 <?php
                 $exp = '';
                 $count = 0;
-                while($breadcrumbs[$count] !== $explode) {
+                while($breadcrumbs[$count] !== $dirRout) {
                     $exp .= $breadcrumbs[$count] . '/';
                     $count++;
                 }
                 $trim = rtrim($exp, '/');
                 ?>
-                <a href="?rout=<?= "{$trim}/{$explode}"?>"><?= $explode ?></a>
+                <a href="?rout=<?= "{$trim}/{$dirRout}"?>"><?= $dirRout ?></a>
             <?php endforeach; ?>
         </td>
         <td>
@@ -108,9 +108,19 @@ $breadcrumbs = explode('/',   $actualInsideRout);
 
             <hr color="#F56433">
             <ul class="text">
-                <?php foreach ($dirData as $dirRout) : ?>
-                    <li><a href="?rout=<?= $actualInsideRout ?>/<?= $dirRout ?>"><?= $dirRout ?></a></li>
-                <?php endforeach; ?>
+            <?php foreach ($dirData as $dirRout) : ?>
+                <form action="deleteDir.php" method = "post">
+                    <li>
+                        <a  style="margin-right: 10px"  href="?rout=<?="{$actualInsideRout}/{$dirRout}"?>"><?= $dirRout ?></a>
+                        <input name="actualInsideRout" value="<?= $actualInsideRout ?>" type="hidden">
+                        <input name="deleteDir" value="<?= $dirRout ?>" type="hidden">
+                        <?php if($dirRout !== '..') : ?>
+
+                            <button class="button25" type="submit" >Delete</button>
+                        <?php endif; ?>
+                    </li>
+                </form>
+            <?php endforeach; ?>
             </ul>
         </td>
         <td valign="top">
