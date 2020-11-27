@@ -5,21 +5,21 @@ services:
     container_name: skillup-vitaliy
     volumes:
       - ./:/var/www
-
   nginx:
     image: nginx:1.17
     container_name: skillup_nginx
     ports:
-       - 8001:80
+      - 8001:80
     volumes:
-       - ./:/var/www
-       - ./docker/nginx/skillup.local.conf:/etc/nginx/conf.d/skillup.local.conf
+      - ./:/var/www
+      - ./docker/nginx/local-shop.com.conf:/etc/nginx/conf.d/local-shop.com.conf
+      - ./docker/nginx/skillup.local.conf:/etc/nginx/conf.d/skillup.local.conf
     depends_on:
-       - app
+      - app
   db:
     image: mysql:8.0.22
     ports:
-    - 3306:3306
+      - 3306:3306
     container_name: skillup_mysql
     command: --default-authentication-plugin=mysql_native_password
     restart: always
@@ -28,3 +28,4 @@ services:
       MYSQL_USER: skillup_user
       MYSQL_PASSWORD: skillup_pwd
       MYSQL_ALLOW_EMPTY_PASSWORD: 1
+
