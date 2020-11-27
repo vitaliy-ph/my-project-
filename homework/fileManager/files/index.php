@@ -56,7 +56,7 @@ if (rtrim($actualDir, '/') === $baseDir) {
     });
 }
 
-$breadcrumbs = explode('/',  $actualInsideRout);
+$breadcrumbs = explode('/',   $actualInsideRout);
 ?>
 <!doctype html>
 <html lang="en">
@@ -74,7 +74,7 @@ $breadcrumbs = explode('/',  $actualInsideRout);
 <table  width="100%"  cellpadding="10">
     <tr>
         <td class="breadcrumb">
-            <a href="?rout=">Home</a>
+            <a href="/homework/fileManager/files/?rout=/">Home</a>
             <?php foreach ($breadcrumbs as $explode):?>
                 <?php
                 $exp = '';
@@ -99,14 +99,14 @@ $breadcrumbs = explode('/',  $actualInsideRout);
                 <input name="name" type="text">
                 <button class="button27"  type="submit">Create Dir</button>
             </form>
-            <hr>
+            <hr color="#F56433">
             <form action="uploadFiles.php" method="post" enctype="multipart/form-data">
                 <input name="baseDir" value="<?= $actualInsideRout ?>" type="hidden">
                 <input   name="attachment[]" type="file" multiple="multiple" max="2">
                 <button class="button27"  type="submit">Upload</button>
             </form>
 
-            <hr>
+            <hr color="#F56433">
             <ul class="text">
                 <?php foreach ($dirData as $dirRout) : ?>
                     <li><a href="?rout=<?= $actualInsideRout ?>/<?= $dirRout ?>"><?= $dirRout ?></a></li>

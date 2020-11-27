@@ -30,7 +30,7 @@
 
 }
 .breadcrumb a:first-child {
-    padding-left: 8px;
+    padding-left: 9px;
 }
 
 
@@ -83,7 +83,7 @@ a {
 
 table   {
     font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
-    text-align: center;
+    text-align: left;
     border-collapse: collapse;
     border-spacing: 30px;
     background:  #474747;
