@@ -1,10 +1,8 @@
 <?php
 
-
 namespace app\components;
 
-use  app\helpers\StringsHelper;
-
+use app\helpers\StringsHelper;
 
 /**
  * Class Dispatcher
@@ -12,29 +10,43 @@ use  app\helpers\StringsHelper;
  */
 class Dispatcher
 {
-
-    private const  DEFAULT_CONTROLLER = 'index';
+    private const DEFAULT_CONTROLLER = 'index';
     private const DEFAULT_ACTION = 'index';
 
-    private string $address='';
+    /**
+     * @var string
+     */
+    private string $address;
 
-    private  string  $controller ='';
+    /**
+     * @var string
+     */
+    private string $separator;
 
-    private string  $action = '';
+    /**
+     * @var string
+     */
+    private string $controller = '';
 
-    private array $params= [];
+    /**
+     * @var string
+     */
+    private string $action = '';
+
+    /**
+     * @var array
+     */
+    private array $params = [];
 
     /**
      * Dispatcher constructor.
      * @param string $address
      * @param string $separator
      */
-    public function __construct(string $address, string $separator = '/' )
+    public function __construct(string $address, string $separator = '/')
     {
-
         $this->separator = $separator;
         $this->setAddress($address);
-
 
         $this->dispatch();
     }
@@ -42,20 +54,18 @@ class Dispatcher
     /**
      * @return string
      */
-    public function getControllerPart():string
+    public function getControllerPart(): string
     {
-
         return $this->controller;
     }
 
     /**
      * @return string
      */
-    public function getActionPart():string
+    public function getActionPart(): string
     {
         return $this->action;
     }
-
 
     /**
      * @return array
@@ -65,18 +75,18 @@ class Dispatcher
         return $this->params;
     }
 
-
-    private function setAddress(string $address) : void
+    /**
+     * @param string $address
+     */
+    private function setAddress(string $address): void
     {
-
         $getParamsStart = strpos($address, '?');
-        if ($getParamsStart !== false){
+        if ($getParamsStart !== false) {
             $address = substr($address, 0, $getParamsStart);
         }
 
         $this->address = StringsHelper::trim($address, $this->separator);
     }
-
 
     private function dispatch(): void
     {
@@ -86,31 +96,27 @@ class Dispatcher
         $this->action = array_shift($parts) ?: self::DEFAULT_ACTION;
 
         $this->setParams($parts);
-
-        var_dump($this->controller, $this->action, $this->params);
-
-
     }
-
 
     /**
      * @param array $parts
      */
-    private function  setParams(array $parts) : void
+    private function setParams(array $parts): void
     {
-        $keys =[];
-        $values=[];
-        foreach ($parts as $index => $value){
-            if ($index %2 === 0){
-                $keys [] = $value;
-            }else {
-                $values [] = $value;
+        $keys = [];
+        $values = [];
+        foreach ($parts as $index => $value) {
+            if ($index % 2 === 0) {
+                $keys[] = $value;
+            } else {
+                $values[] = $value;
             }
         }
 
-        if(count($keys) > count($values)){
+        if (count($keys) > count($values)) {
             $values[] = null;
         }
+
         $this->params = array_merge(array_combine($keys, $values), $_GET);
     }
 }
