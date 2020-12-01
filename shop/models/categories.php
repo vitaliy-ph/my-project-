@@ -1,5 +1,10 @@
 <?php
 
+require_once __DIR__ . '/../SECUR.php';
+require_once __DIR__ . '/../AUTH.php';
+
+
+
 /**
  * @param array $data
  * @return bool
@@ -24,3 +29,6 @@ function getCategories(): array
 
     return mysqli_fetch_all($result, MYSQLI_ASSOC);
 }
+
+
+

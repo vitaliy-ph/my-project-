@@ -1,5 +1,4 @@
 
-
 <form action="" method="post">
     <div>
         <label for="title">Title</label>
@@ -10,9 +9,9 @@
         <select  name="parent_category_id" id="parent_category_id">
             <option value="">--</option>
             <?php foreach (getCategories() as $category): ?>
-            <option value="<?= $category['id']?>"><?= $category['title'] ?></option>
+                <option value="<?= $category['id']?>"><?= $category['title'] ?></option>
             <?php endforeach;?>
         </select>
     </div>
-<input type="submit" value="Save">
+    <input type="submit" value="Save">
 </form>

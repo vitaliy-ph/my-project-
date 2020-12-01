@@ -1,5 +1,6 @@
 <?php
-
+require_once __DIR__ . '/../SECUR.php';
+require_once __DIR__ . '/../AUTH.php';
 $dbConnection = null;
 
 /**

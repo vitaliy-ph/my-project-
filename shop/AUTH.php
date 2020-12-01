@@ -43,7 +43,7 @@ exit('Login or password is incorrect');
 
 
 $_SESSION['user'] = $login;
-header('Location: /shop/');
+header('Location: views/categories/create.php');
 
 
 
