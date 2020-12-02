@@ -1,11 +1,9 @@
 <?php
 
 error_reporting(E_ALL);
+require_once __DIR__ . '/SECUR.php';
 
 $config = require __DIR__ . '/config.php';
-
-require_once __DIR__ . '/SECUR.php';
-require_once __DIR__ . '/AUTH.php';
 
 
 
