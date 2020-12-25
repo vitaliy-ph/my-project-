@@ -5,6 +5,11 @@ services:
     container_name: skillup-vitaliy
     volumes:
       - ./:/var/www
+    depends_on:
+      - db
+      - yii2_db
+      - new_db
+      - new2_db
   nginx:
     image: nginx:1.17
     container_name: skillup_nginx
@@ -14,6 +19,9 @@ services:
       - ./:/var/www
       - ./docker/nginx/local-shop.com.conf:/etc/nginx/conf.d/local-shop.com.conf
       - ./docker/nginx/skillup.local.conf:/etc/nginx/conf.d/skillup.local.conf
+      - ./docker/nginx/local-blog.com.conf:/etc/nginx/conf.d/local-blog.com.conf
+      - ./docker/nginx/local-gallery.com.conf:/etc/nginx/conf.d/local-gallery.com.conf
+      - ./docker/nginx/local-yii2.com.conf:/etc/nginx/conf.d/local-yii2.com.conf
     depends_on:
       - app
   db:
@@ -28,4 +36,39 @@ services:
       MYSQL_USER: skillup_user
       MYSQL_PASSWORD: skillup_pwd
       MYSQL_ALLOW_EMPTY_PASSWORD: 1
-
+  yii2_db:
+    image: mysql:8.0.22
+    ports:
+      - 3307:3306
+    container_name: yii2_mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_DATABASE: yii2_db
+      MYSQL_USER: yii2_user
+      MYSQL_PASSWORD: yii2_pwd
+      MYSQL_ALLOW_EMPTY_PASSWORD: 1
+  new_db:
+    image: mysql:8.0.22
+    ports:
+      - 3311:3306
+    container_name: new_mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_DATABASE: new_db
+      MYSQL_USER: new_user
+      MYSQL_PASSWORD: new_pwd
+      MYSQL_ALLOW_EMPTY_PASSWORD: 1
+  new2_db:
+    image: mysql:8.0.22
+    ports:
+      - 3309:3306
+    container_name: new2_mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_DATABASE: new2_db
+      MYSQL_USER: new2_user
+      MYSQL_PASSWORD: new2_pwd
+      MYSQL_ALLOW_EMPTY_PASSWORD: 1
