@@ -9,7 +9,8 @@ use application\core\Controller;
 class UsersController extends Controller {
 
 
-    public function registerAction() {
+    public function registerAction()
+    {
         if (!empty($_POST)) {
             if (!$this->model->validate(['login', 'password'], $_POST)) {
                 $this->view->message('Error', $this->model->error);
@@ -23,7 +24,8 @@ class UsersController extends Controller {
         $this->view->render('Registration');
     }
 
-    public function loginAction() {
+    public function loginAction()
+    {
         if (!empty($_POST)) {
             if (!$this->model->validate(['login', 'password'], $_POST)) {
                 $this->view->message('Error', $this->model->error);
@@ -39,7 +41,8 @@ class UsersController extends Controller {
 
 
 
-    public function logoutAction() {
+    public function logoutAction()
+    {
         unset($_SESSION['users']);
         $this->view->redirect('users/login');
     }
