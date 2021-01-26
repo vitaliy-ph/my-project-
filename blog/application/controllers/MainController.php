@@ -6,6 +6,7 @@ use application\core\Controller;
 use application\lib\Pagination;
 use application\models\Admin;
 
+
 class MainController extends Controller {
 
     public function indexAction()
