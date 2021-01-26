@@ -64,9 +64,8 @@ class AdminController extends Controller {
             }
             $this->view->location('admin/posts');
         }
-        $vars = [
-            'data' => $this->model->postData($this->route['id'])[0],
-        ];
+        $vars = ['data' => $this->model->postData($this->route['id'])[0],];
+
         $this->view->render('Edit post', $vars);
     }
 
