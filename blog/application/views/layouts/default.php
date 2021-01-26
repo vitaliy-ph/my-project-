@@ -35,10 +35,7 @@
                     </li>
                 <?php else: ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="/users/register">register</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/users/login">sign in</a>
+                        <a class="nav-link" href="/users/login">login</a>
                     </li>
                 <?php endif; ?>
             </ul>
