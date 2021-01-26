@@ -22,6 +22,8 @@ return [
         'controller' => 'main',
         'action' => 'post',
     ],
+
+
     // AdminController
     'admin/login' => [
         'controller' => 'admin',
@@ -51,6 +53,8 @@ return [
         'controller' => 'admin',
         'action' => 'posts',
     ],
+
+
     // UsersController
     'users/login' => [
         'controller' => 'users',
@@ -59,10 +63,6 @@ return [
     'users/register' => [
         'controller' => 'users',
         'action' => 'register',
-    ],
-    'users/profile' => [
-        'controller' => 'users',
-        'action' => 'profile',
     ],
     'users/logout' => [
         'controller' => 'users',
