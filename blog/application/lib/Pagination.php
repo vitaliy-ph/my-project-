@@ -7,7 +7,6 @@ class Pagination {
 
     private $max = 5;
     private $route;
-    private $index = '';
     private $current_page;
     private $total;
     private $limit;
