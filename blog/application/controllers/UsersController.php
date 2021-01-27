@@ -39,7 +39,8 @@ class UsersController extends Controller {
                 $this->view->message('Error', 'username or password is incorrect');
             }
             $this->model->login($_POST['login']);
-            $this->view->location(' ');
+            $this->view->location('about');
+
         }
         $this->view->render('Sign in');
     }
