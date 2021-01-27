@@ -1,12 +1,17 @@
 <?php
 
-
-
 namespace application\controllers;
 
 use application\core\Controller;
 
 class UsersController extends Controller {
+
+
+    public function __construct($route)
+    {
+        parent::__construct($route);
+        $this->view->layout = 'users';
+    }
 
 
     public function registerAction()
