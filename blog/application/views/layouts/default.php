@@ -26,12 +26,13 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/contact">feedback</a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/admin/login">admin panel</a>
                 </li>
                 <?php if (isset($_SESSION['users']['id'])): ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="/users/logout">logout</a>
+                        <a class="nav-link" href="/users/account">account</a>
                     </li>
                 <?php else: ?>
                     <li class="nav-item">

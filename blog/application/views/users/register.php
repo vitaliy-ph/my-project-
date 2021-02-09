@@ -19,7 +19,7 @@
                 <button type="submit" class="btn btn-primary">Registration</button>
             </form>
             <br>
-            <a class="" href="/users/login">Login</a>
+            <a class="nav-link" href="/users/login">Login</a>
         </div>
     </div>
 </div>

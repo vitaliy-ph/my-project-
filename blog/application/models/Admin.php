@@ -76,7 +76,8 @@ class Admin extends Model {
         ];
 
         $this->db->query(
-            'UPDATE posts SET name = :name, description = :description, text = :text WHERE id = :id', $params
+            'UPDATE posts SET name = :name, description = :description, text = :text WHERE id = :id',
+            $params
         );
     }
 

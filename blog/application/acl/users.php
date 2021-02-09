@@ -6,10 +6,12 @@ return [
     ],
     'authorize' => [
         'logout',
+        'account'
     ],
     'guest' => [
         'register',
         'login',
+        'account'
     ],
     'admin' => [
         //

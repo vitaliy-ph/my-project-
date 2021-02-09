@@ -4,7 +4,8 @@ namespace application\controllers;
 
 use application\core\Controller;
 
-class UsersController extends Controller {
+class UsersController extends Controller
+{
 
 
     public function __construct($route)
@@ -19,8 +20,7 @@ class UsersController extends Controller {
         if (!empty($_POST)) {
             if (!$this->model->validate(['login', 'password'], $_POST)) {
                 $this->view->message('Error', $this->model->error);
-            }
-            elseif (!$this->model->checkLoginExists($_POST['login'])) {
+            } elseif (!$this->model->checkLoginExists($_POST['login'])) {
                 $this->view->message('Error', $this->model->error);
             }
             $this->model->register($_POST);
@@ -34,15 +34,20 @@ class UsersController extends Controller {
         if (!empty($_POST)) {
             if (!$this->model->validate(['login', 'password'], $_POST)) {
                 $this->view->message('Error', $this->model->error);
-            }
-            elseif (!$this->model->checkData($_POST['login'], $_POST['password'])) {
+            } elseif (!$this->model->checkData($_POST['login'], $_POST['password'])) {
                 $this->view->message('Error', 'username or password is incorrect');
             }
             $this->model->login($_POST['login']);
-            $this->view->location('about');
+            $this->view->location('users/account');
 
         }
         $this->view->render('Sign in');
+    }
+
+    public function accountAction()
+    {
+        $this->view->render('Account');
+
     }
 
 

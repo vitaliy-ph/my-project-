@@ -19,10 +19,11 @@
                 </div>
                 <button type="submit" class="btn btn-primary">Sign in</button>
             </form>
+            <div>
             <br>
-            <a class="" href="/users/register">Registration</a>
-            or
-            <a class="" href="/">Home page</a>
+            <a class="nav-link" href="/users/register">Registration</a>
+            <a class="nav-link" href="/">Home page</a>
+        </div>
         </div>
     </div>
 </div>

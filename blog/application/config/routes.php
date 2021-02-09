@@ -68,5 +68,9 @@ return [
         'controller' => 'users',
         'action' => 'logout',
     ],
+    'users/account' => [
+        'controller' => 'users',
+        'action' => 'account'
+    ],
 
 ];
