@@ -3,23 +3,24 @@
 
 namespace app\components\web;
 
-
-use phpDocumentor\Reflection\Types\Parent_;
-use yii\base\Module;
-use yii\web\BadRequestHttpException;
+use Yii;
+use yii\base\Action;
 use yii\web\Controller;
+use yii\web\BadRequestHttpException;
 
 class SecuredController extends Controller
 {
-    public function beforeAction($action)
+    /**
+     * @param Action $action
+     * @return bool
+     * @throws BadRequestHttpException
+     */
+    public function beforeAction($action): bool
     {
-        try {
-            if (parent::beforeAction($action) && \Yii::$app->user->isGuest) {
-                $this->redirect(['/site/login'])->send();
-            }
-        } catch (BadRequestHttpException $e) {
+        if (parent::beforeAction($action) && Yii::$app->user->isGuest) {
+            $this->redirect(['site/login'])->send();
         }
+
+        return true;
     }
-
-
 }
