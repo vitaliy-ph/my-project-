@@ -174,7 +174,7 @@ show_arr($Hm);
 
 */
 
-/*$Hm = [
+$Hm = [
     'Ukraine'=> [
         'city' => 'Lviv',
         'date' => '19 september',
@@ -187,13 +187,13 @@ show_arr($Hm);
 
     ],
 ];
-print_r($Hm);*/
+print_r($Hm);
 
-//echo "Counts all elements: " . count($Hm,COUNT_RECURSIVE);
+echo "Counts all elements: " . count($Hm,COUNT_RECURSIVE);
 
-//echo "Counts  elements: " . count($Hm);*/
+echo "Counts  elements: " . count($Hm);
 
-///////////////////
+
 
 
 
