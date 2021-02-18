@@ -22,7 +22,7 @@ if (!mkdir($rout) && !is_dir($rout)) {
     exit(sprintf('Directory "%s" was not created', $rout));
 }
 
-header("Location: index.php?rout={$baseInsideDir}");
+header("Location: IndexMess.php?rout={$baseInsideDir}");
 exit;
 
 $file_name = "file.docx";

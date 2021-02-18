@@ -62,7 +62,7 @@ if (rtrim($actualDir, '/') === $baseDir) {
 <html lang="en">
 <head>
     <style>
-        <?php echo file_get_contents("style.css"); ?>
+        <?php echo file_get_contents('style.css'); ?>
     </style>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -115,4 +115,3 @@ if (rtrim($actualDir, '/') === $baseDir) {
 </table>
 </body>
 </html>
-
