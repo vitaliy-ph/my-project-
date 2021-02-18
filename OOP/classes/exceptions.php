@@ -1,6 +1,5 @@
 <?php
 
-
 class SkillUpException extends Exception
 {
     public $message = 'SkillUp test exception';

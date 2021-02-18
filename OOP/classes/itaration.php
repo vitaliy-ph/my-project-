@@ -1,6 +1,5 @@
 <?php
 
-
 class Properties
 {
     public int $p1 = 1;

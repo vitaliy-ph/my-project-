@@ -1,6 +1,13 @@
 <?php
 
-
+/**
+ * Class Magic
+ *
+ * @property int test
+ * @property int[] qwerty
+ *
+ * @method void doSmth(int $a, int $b, int $c)
+ */
 class Magic
 {
     private string $magicWord;
