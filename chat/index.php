@@ -31,9 +31,6 @@ fclose($file);
         <input type="text" name="nickname" id="nickname"  required>
         <label for="name">Name</label>
         <input type="text" name="name" id="name"  required>
-        <label for="surname">Surname</label>
-        <input type="text" name="surname" id="surname"  required>
-
     </div>
 
 
@@ -52,7 +49,6 @@ fclose($file);
     <tr>
         <th>Nickname</th>
         <th>Name</th>
-        <th>Surname</th>
         <th>Message</th>
         <th>Time</th>
     </tr>
@@ -60,7 +56,6 @@ fclose($file);
     <tr>
         <td><?= $message['nickname']?></td>
         <td><?= $message['name']?></td>
-        <td><?= $message['surname']?></td>
         <td><?= $message['message']?></td>
         <td><?= $message['time']?></td>
     </tr>
