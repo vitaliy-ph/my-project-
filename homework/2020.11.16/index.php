@@ -13,7 +13,7 @@ var_dump(Homework::SCHOOL);
 $mentor = new Mentor();
 $mentor->setName('Homer Simpson');
 $mentor->setHomework('I have a two new homework');
-$mentor->setDescribe('№1 create a database on the host, №2 create controllesr in OOP');
+$mentor->setDescribe('№1 create a database on the host, №2 create controllerViews in OOP');
 
 
 
@@ -28,7 +28,7 @@ $student->deadline();
 $student2 = new Student();
 $student2->setName('Bender Rodriguez');
 $student2->setHomework('I accepted homework №2');
-$student2->setDescribe('create controllers in OOP');
+$student2->setDescribe('create controllerViews in OOP');
 $student2->getName();
 $student2->deadline();
 

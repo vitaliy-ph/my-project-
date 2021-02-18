@@ -27,7 +27,6 @@ $info = [
 
 
 
-
 echo '<table border="1px">';
 foreach ($info as $task ) {
     foreach ($task as $key => $value)

@@ -45,7 +45,7 @@ foreach ($attachment as $attach) {
 }
 
 
-header("Location: index.php?rout={$baseInsideDir}");
+header("Location: IndexMess.php?rout={$baseInsideDir}");
 exit;
 
 

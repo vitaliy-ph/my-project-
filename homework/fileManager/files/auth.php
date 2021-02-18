@@ -44,5 +44,5 @@ if (!$passwordHash || !password_verify($password, $passwordHash)) {
 
 $_SESSION['user'] = $login;
 
-header('Location: index.php');
+header('Location: IndexMess.php');
 

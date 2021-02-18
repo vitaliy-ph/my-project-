@@ -14,7 +14,7 @@ static $count;
 
 if(is_file($pathToDelete)){
     unlink($pathToDelete);
-    header("Location: index.php?rout={$actualInsideRout}");
+    header("Location: IndexMess.php?rout={$actualInsideRout}");
     exit();
 }
 
@@ -23,7 +23,7 @@ while($count !== 1) {
     DeleteDir($pathToDelete);
 }
 
-header("Location: index.php?rout={$actualInsideRout}");
+header("Location: IndexMess.php?rout={$actualInsideRout}");
 exit();
 
 
