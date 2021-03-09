@@ -39,14 +39,15 @@ foreach ($attachment as $attach) {
         ($attach ['type'] == "image/png"))
     {
         move_uploaded_file($attach['tmp_name'], $rout);
-    }else{
+    }
+    else{
         exit('The file type must be (image/jpeg, video/mp4, image/png). ');
     }
 
 }
 
 
-header("Location: IndexMess.php?rout={$baseInsideDir}");
+header("Location: index.php?rout={$baseInsideDir}");
 exit;
 
 
